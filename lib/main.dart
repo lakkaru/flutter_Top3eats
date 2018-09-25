@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:top3eats/by_dish.dart';
-import 'package:top3eats/home.dart';
-import 'package:top3eats/my_eats.dart';
-import 'package:top3eats/profile.dart';
+import 'package:top3eats/pages/by_dish.dart';
+import 'package:top3eats/pages/home.dart';
+import 'package:top3eats/pages/my_eats.dart';
+import 'package:top3eats/pages/profile.dart';
 
 void main() => runApp(new Top3Eats());
 
@@ -13,7 +13,7 @@ class Top3Eats extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.yellow),
-      home: HomePage(),
+      home: LandingPage(),
       // routes: <String, WidgetBuilder>{
       //   "/a":(BuildContext context)=>NewPage("New Page"),
       // }
@@ -21,7 +21,7 @@ class Top3Eats extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,16 +80,16 @@ class HomePage extends StatelessWidget {
                     builder: (BuildContext context) => Profile("Profile")));
               },
             ),
-            ListTile(
-              title: Text("Profile"),
-              trailing: Icon(Icons.arrow_forward),
-              onTap: () {
-                Navigator.of(context).pop();
-                // Navigator.of(context).pushNamed("/a");
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => Profile("Profile")));
-              },
-            ),
+            // ListTile(
+            //   title: Text("Profile"),
+            //   trailing: Icon(Icons.arrow_forward),
+            //   onTap: () {
+            //     Navigator.of(context).pop();
+            //     // Navigator.of(context).pushNamed("/a");
+            //     Navigator.of(context).push(MaterialPageRoute(
+            //         builder: (BuildContext context) => Profile("Profile")));
+            //   },
+            // ),
             Divider(),
             ListTile(
               title: Text("Close"),
