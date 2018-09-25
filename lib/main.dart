@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:top3eats/functions/dataSearch.dart';
 import 'package:top3eats/pages/by_dish.dart';
 import 'package:top3eats/pages/home.dart';
 import 'package:top3eats/pages/my_eats.dart';
@@ -28,6 +29,11 @@ class LandingPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Top3Eat"),
         elevation: defaultTargetPlatform == TargetPlatform.android ? 5.0 : 0.0,
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.search), onPressed: (){
+            showSearch(context:context, delegate: DataSearch());
+          },)
+        ],
       ),
       drawer: Drawer(
         child: ListView(
