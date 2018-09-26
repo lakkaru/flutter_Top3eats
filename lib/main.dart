@@ -5,8 +5,11 @@ import 'package:top3eats/pages/by_dish.dart';
 import 'package:top3eats/pages/home.dart';
 import 'package:top3eats/pages/my_eats.dart';
 import 'package:top3eats/pages/profile.dart';
+import 'package:top3eats/pages/map_page.dart';
 
-void main() => runApp(new Top3Eats());
+void main() {
+  runApp(new Top3Eats());
+}
 
 class Top3Eats extends StatelessWidget {
   @override
@@ -30,9 +33,12 @@ class LandingPage extends StatelessWidget {
         title: Text("Top3Eat"),
         elevation: defaultTargetPlatform == TargetPlatform.android ? 5.0 : 0.0,
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.search), onPressed: (){
-            showSearch(context:context, delegate: DataSearch());
-          },)
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              showSearch(context: context, delegate: DataSearch());
+            },
+          )
         ],
       ),
       drawer: Drawer(
@@ -86,16 +92,16 @@ class LandingPage extends StatelessWidget {
                     builder: (BuildContext context) => Profile("Profile")));
               },
             ),
-            // ListTile(
-            //   title: Text("Profile"),
-            //   trailing: Icon(Icons.arrow_forward),
-            //   onTap: () {
-            //     Navigator.of(context).pop();
-            //     // Navigator.of(context).pushNamed("/a");
-            //     Navigator.of(context).push(MaterialPageRoute(
-            //         builder: (BuildContext context) => Profile("Profile")));
-            //   },
-            // ),
+            ListTile(
+              title: Text("Map"),
+              trailing: Icon(Icons.arrow_forward),
+              onTap: () {
+                Navigator.of(context).pop();
+                // Navigator.of(context).pushNamed("/a");
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => MapPage()));
+              },
+            ),
             Divider(),
             ListTile(
               title: Text("Close"),
